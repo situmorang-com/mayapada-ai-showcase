@@ -6,7 +6,7 @@
 	const description =
 		'Mayapada AI Initiatives is a strategic portfolio of high-impact AI programs across financial services, healthcare, property, hospitality, retail, and media to drive measurable business transformation.';
 	const siteUrl = 'https://mayapada.situmorang.com';
-	const ogImage = `${siteUrl}/og-mayapada-ai-initiatives.svg`;
+	const ogImage = `${siteUrl}/og-mayapada-ai-initiatives.png`;
 </script>
 
 <svelte:head>
@@ -19,6 +19,9 @@
 	<meta property="og:description" content={description} />
 	<meta property="og:url" content={siteUrl} />
 	<meta property="og:image" content={ogImage} />
+	<meta property="og:image:type" content="image/png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
 	<meta property="og:image:alt" content="Mayapada AI Initiatives logo and brand card" />
 
 	<meta name="twitter:card" content="summary_large_image" />
