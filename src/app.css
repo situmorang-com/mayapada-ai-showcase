@@ -1,0 +1,101 @@
+/* ================================================
+   MAYAPADA GROUP × AI — Global Theatrical Styles
+   ================================================ */
+
+:root {
+	/* Core palette */
+	--bg-deep: #06060e;
+	--bg-surface: #0c0c1a;
+	--bg-card: #111128;
+	--bg-card-hover: #1a1a3e;
+
+	/* Gold system */
+	--gold: #d4af37;
+	--gold-light: #f4e4a0;
+	--gold-dim: #a08520;
+	--gold-glow: rgba(212, 175, 55, 0.15);
+
+	/* Text */
+	--text-primary: #f0ece2;
+	--text-secondary: rgba(240, 236, 226, 0.65);
+	--text-muted: rgba(240, 236, 226, 0.35);
+
+	/* Theatrical */
+	--curtain-color: #1a0a2e;
+	--spotlight: radial-gradient(ellipse at 50% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+
+	/* Typography */
+	--font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+	--font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+	--font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+	/* Cinematic easings */
+	--ease-silk: cubic-bezier(0.76, 0, 0.24, 1);
+	--ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+	--ease-flow: cubic-bezier(0.33, 1, 0.68, 1);
+	--ease-dramatic: cubic-bezier(0.87, 0, 0.13, 1);
+
+	/* Spacing */
+	--section-padding: clamp(4rem, 10vh, 8rem);
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	font-family: var(--font-body);
+	background: var(--bg-deep);
+	color: var(--text-primary);
+	line-height: 1.7;
+	overflow-x: hidden;
+}
+
+::selection {
+	background: rgba(212, 175, 55, 0.3);
+	color: var(--gold-light);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+	width: 6px;
+}
+::-webkit-scrollbar-track {
+	background: var(--bg-deep);
+}
+::-webkit-scrollbar-thumb {
+	background: var(--gold-dim);
+	border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: var(--gold);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* Focus styles */
+:focus-visible {
+	outline: 2px solid var(--gold);
+	outline-offset: 3px;
+}
