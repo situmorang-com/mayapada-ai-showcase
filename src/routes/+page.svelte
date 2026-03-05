@@ -416,30 +416,29 @@
 				</div>
 			</div>
 
-			<div class="finale-closing" use:observe>
-				<div class="finale-quote">
-					<span class="quote-mark">"</span>
-					The future belongs to those who see possibilities before they become obvious.
-					<span class="quote-mark">"</span>
+				<div class="finale-closing" use:observe>
+					<div class="finale-quote">
+						<span class="quote-mark">"</span>
+						The future belongs to those who see possibilities before they become obvious.
+						<span class="quote-mark">"</span>
+					</div>
 				</div>
-				<p class="finale-attribution">— The Mayapada Vision</p>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
 <!-- ════════════════════════════════════════════════
      FOOTER
      ════════════════════════════════════════════════ -->
-<footer class="site-footer">
-	<div class="footer-content">
-		<div class="footer-brand">
-			<span class="footer-logo">M</span>
-			<span>Mayapada Group AI Showcase</span>
-		</div>
-		<p class="footer-note">
-			A conceptual exploration of AI-powered transformation.
-		</p>
+	<footer class="site-footer">
+		<div class="footer-content">
+			<div class="footer-brand">
+				<span class="footer-logo">M</span>
+				<span>Mayapada AI Initiatives</span>
+			</div>
+			<p class="footer-note">
+				A conceptual exploration of AI-powered transformation.
+			</p>
 	</div>
 </footer>
 
@@ -706,6 +705,17 @@
 		letter-spacing: 0.05em;
 		color: var(--text-primary);
 		margin-bottom: 1.5rem;
+		text-shadow: 0 0 24px rgba(212, 175, 55, 0.1);
+		animation: titleGlow 6s ease-in-out infinite;
+	}
+
+	@keyframes titleGlow {
+		0%, 100% {
+			text-shadow: 0 0 18px rgba(212, 175, 55, 0.08);
+		}
+		50% {
+			text-shadow: 0 0 32px rgba(212, 175, 55, 0.2);
+		}
 	}
 
 	.title-word {
@@ -892,6 +902,12 @@
 		font-weight: 700;
 		color: var(--text-primary);
 		margin-bottom: 1rem;
+		animation: sectionTitleBreath 7s ease-in-out infinite;
+	}
+
+	@keyframes sectionTitleBreath {
+		0%, 100% { opacity: 0.95; }
+		50% { opacity: 1; }
 	}
 
 	.section-desc {
@@ -1033,6 +1049,12 @@
 		font-size: 2.5rem;
 		margin: 0.5rem 0;
 		filter: drop-shadow(0 0 12px rgba(var(--sector-rgb), 0.3));
+		animation: iconFloat 4.2s ease-in-out infinite;
+	}
+
+	@keyframes iconFloat {
+		0%, 100% { transform: translateY(0); }
+		50% { transform: translateY(-6px); }
 	}
 
 	.act-title {
@@ -1114,12 +1136,36 @@
 		padding: 1.5rem;
 		margin-bottom: 1rem;
 		transition: all 0.4s var(--ease-smooth);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.company-card::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -130%;
+		width: 120%;
+		height: 100%;
+		background: linear-gradient(115deg, transparent 0%, rgba(212, 175, 55, 0.16) 50%, transparent 100%);
+		opacity: 0;
+		transition: opacity 0.35s ease;
 	}
 
 	.company-card:hover {
 		background: var(--bg-card-hover);
 		border-color: rgba(212, 175, 55, 0.15);
 		transform: translateX(4px);
+	}
+
+	.company-card:hover::after {
+		opacity: 1;
+		animation: sweepShine 1s var(--ease-smooth);
+	}
+
+	@keyframes sweepShine {
+		from { left: -130%; }
+		to { left: 120%; }
 	}
 
 	.company-header {
@@ -1199,6 +1245,12 @@
 		font-size: 1.5rem;
 		flex-shrink: 0;
 		margin-top: 0.1rem;
+		animation: iconBob 3.2s ease-in-out infinite;
+	}
+
+	@keyframes iconBob {
+		0%, 100% { transform: translateY(0); }
+		50% { transform: translateY(-4px); }
 	}
 
 	.ai-card-title {
@@ -1412,6 +1464,7 @@
 	.convergence-icon {
 		font-size: 2.5rem;
 		margin-bottom: 1rem;
+		animation: iconFloat 4s ease-in-out infinite;
 	}
 
 	.convergence-card h4 {
@@ -1450,21 +1503,18 @@
 		padding: 2rem 0;
 		border-top: 1px solid rgba(212, 175, 55, 0.1);
 		border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+		animation: quoteGlow 6s ease-in-out infinite;
+	}
+
+	@keyframes quoteGlow {
+		0%, 100% { box-shadow: 0 0 0 rgba(212, 175, 55, 0); }
+		50% { box-shadow: 0 0 28px rgba(212, 175, 55, 0.08); }
 	}
 
 	.quote-mark {
 		color: var(--gold);
 		font-size: 1.5em;
 		vertical-align: -0.1em;
-	}
-
-	.finale-attribution {
-		font-family: var(--font-mono);
-		font-size: 0.75rem;
-		letter-spacing: 0.15em;
-		text-transform: uppercase;
-		color: var(--gold-dim);
-		margin-top: 1rem;
 	}
 
 	/* ════════════════════════════════════════════════
@@ -1505,6 +1555,18 @@
 		color: var(--gold);
 		border: 1px solid var(--gold-dim);
 		border-radius: 6px;
+		animation: logoPulse 3.5s ease-in-out infinite;
+	}
+
+	@keyframes logoPulse {
+		0%, 100% {
+			transform: scale(1);
+			box-shadow: 0 0 0 rgba(212, 175, 55, 0);
+		}
+		50% {
+			transform: scale(1.04);
+			box-shadow: 0 0 14px rgba(212, 175, 55, 0.25);
+		}
 	}
 
 	.footer-note {
