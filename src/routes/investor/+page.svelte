@@ -112,6 +112,21 @@
 <svelte:head>
 	<title>Investor Deck — Mayapada Group AI Strategy</title>
 	<meta name="description" content="Building Indonesia's first AI-native conglomerate. Investor brief for Mayapada Group AI transformation." />
+
+	<meta property="og:title" content="Investor Deck — Mayapada Group AI Strategy" />
+	<meta property="og:description" content="Building Indonesia's first AI-native conglomerate. Healthcare AI as the beachhead, cross-sector data flywheel across 40+ companies and 6 industries." />
+	<meta property="og:url" content="https://mayapada.situmorang.com/investor" />
+	<meta property="og:image" content="https://mayapada.situmorang.com/og-mayapada-ai-initiatives.png" />
+	<meta property="og:image:type" content="image/png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:image:alt" content="Mayapada Group AI Strategy — Investor Deck" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Investor Deck — Mayapada Group AI Strategy" />
+	<meta name="twitter:description" content="Building Indonesia's first AI-native conglomerate. Healthcare AI as the beachhead, cross-sector data flywheel across 40+ companies and 6 industries." />
+	<meta name="twitter:image" content="https://mayapada.situmorang.com/og-mayapada-ai-initiatives.png" />
+
 	{@html `<style>
 		:root[data-theme='light'] {
 			--bg-deep: #f4f1eb;
