@@ -2,6 +2,9 @@ export interface Company {
 	name: string;
 	ticker?: string;
 	description: string;
+	badge?: string;        // e.g. "Strategic Partnership"
+	badgeColor?: string;   // e.g. "#f59e0b"
+	highlight?: boolean;   // draws extra visual attention
 }
 
 export interface AIOpportunity {
@@ -381,7 +384,10 @@ export const sectors: Sector[] = [
 			{
 				name: 'Bloomberg Partnership',
 				description:
-					'Recent media collaboration with Bloomberg to deepen Mayapada\'s business journalism footprint and expand high-quality financial news access for Indonesian audiences.'
+					'Strategic collaboration with Bloomberg — the world\'s leading financial data and media company — bringing authoritative global business journalism and financial intelligence directly to Indonesian audiences through Mayapada\'s media network.',
+				badge: 'Strategic Partnership',
+				badgeColor: '#f59e0b',
+				highlight: true
 			},
 			{
 				name: 'Elle Indonesia',
@@ -422,9 +428,16 @@ export const sectors: Sector[] = [
 				icon: '📊'
 			},
 			{
+				title: 'Bloomberg Terminal Intelligence',
+				description:
+					'Integrating Bloomberg\'s real-time financial data feeds with AI to deliver hyper-relevant market insights, company analyses, and investment signals tailored for Indonesian readers and Bank Mayapada\'s clientele.',
+				impact: 'Revolutionary',
+				icon: '📰'
+			},
+			{
 				title: 'Multilingual AI Translation',
 				description:
-					'Real-time AI translation between Bahasa Indonesia, English, and Mandarin — enabling Guo Ji Ri Bao content to reach broader audiences and vice versa.',
+					'Real-time AI translation between Bahasa Indonesia, English, and Mandarin — enabling Guo Ji Ri Bao and Bloomberg content to reach broader audiences seamlessly.',
 				impact: 'Transformative',
 				icon: '🌐'
 			}
@@ -432,7 +445,7 @@ export const sectors: Sector[] = [
 		stats: [
 			{ value: 26, suffix: 'yr', label: 'Forbes Indonesia' },
 			{ value: 3, suffix: '+', label: 'TV Networks' },
-			{ value: 3, suffix: '', label: 'Languages Published' }
+			{ value: 2, suffix: '', label: 'Global Media Partners' }
 		]
 	}
 ];
@@ -453,3 +466,303 @@ export const groupInfo = {
 		{ name: 'Victoria Tahir', role: 'President Director, Hospitality' }
 	]
 };
+
+// ─────────────────────────────────────────────────────────────
+// INVESTOR PAGE DATA
+// ─────────────────────────────────────────────────────────────
+
+export interface RoadmapPhase {
+	phase: number;
+	title: string;
+	timeframe: string;
+	sector: string;
+	sectorColor: string;
+	description: string;
+	milestones: string[];
+	status: 'beachhead' | 'expansion' | 'scale';
+}
+
+export interface MarketOpportunity {
+	sector: string;
+	tam: string;
+	tamLabel: string;
+	cagr: string;
+	color: string;
+	colorRgb: string;
+	insight: string;
+}
+
+export interface MoatPillar {
+	title: string;
+	description: string;
+	icon: string;
+	proof: string;
+}
+
+export interface InvestmentThesis {
+	number: string;
+	title: string;
+	description: string;
+	icon: string;
+}
+
+export const sQuantumModel = {
+	hubName: 'S-Quantum Engine',
+	hubDescription:
+		'A centralized Group AI Innovation Hub — upskilling IT teams across all companies into "Group Innovators", pooling talent for breakthrough projects while keeping lean daily-ops teams at each subsidiary.',
+	origin: 'Proven at Sinarmas Innovation Center (Techconnect Academy)',
+	architect: {
+		name: 'Edmund Situmorang',
+		title: 'Managing Director, Techconnect Academy — Sinarmas Innovation Center',
+		role: 'AI Strategy Architect, Mayapada Group'
+	},
+	benefits: [
+		{ stat: '40+', label: 'Companies innovated from one hub' },
+		{ stat: '80%', label: 'Reduction in duplicated IT spend' },
+		{ stat: '10×', label: 'Innovation velocity vs siloed teams' }
+	],
+	spokes: [
+		{ label: 'Healthcare', icon: '🏥', color: '#10b981' },
+		{ label: 'Banking', icon: '🏦', color: '#3b82f6' },
+		{ label: 'Property', icon: '🏙️', color: '#f59e0b' },
+		{ label: 'Hospitality', icon: '🌴', color: '#f43f5e' },
+		{ label: 'Retail', icon: '🛍️', color: '#8b5cf6' },
+		{ label: 'Media', icon: '📡', color: '#06b6d4' }
+	]
+};
+
+export const aiMedTech = {
+	name: 'AI MedTech Company',
+	tagline: "Indonesia's first AI-native medical technology company",
+	description:
+		"Purpose-built at the intersection of Mayapada Healthcare infrastructure and S-Quantum Engine's innovation model — developing AI diagnostic tools, medical imaging models, and clinical decision support systems for the Indonesian market and beyond.",
+	strategicPartners: [
+		{
+			name: 'NVIDIA',
+			focus: 'Clara · Holoscan · BioNeMo — GPU-accelerated medical imaging and drug discovery AI',
+			icon: '⬛',
+			color: '#76b900'
+		},
+		{
+			name: 'Global Health Funds',
+			focus: 'WHO, IFC, and sovereign wealth funds actively investing in SEA health infrastructure',
+			icon: '🌐',
+			color: '#3b82f6'
+		},
+		{
+			name: 'MedTech Strategics',
+			focus: 'Siemens Healthineers, Philips, GE Healthcare — seeking AI integration partners across SEA',
+			icon: '🏥',
+			color: '#10b981'
+		}
+	],
+	comparables: [
+		{ name: 'PathAI', raised: '$165M', focus: 'Pathology AI' },
+		{ name: 'Tempus AI', raised: 'IPO 2024', focus: 'Clinical AI' },
+		{ name: 'Viz.ai', raised: '$251M', focus: 'Care coordination AI' }
+	],
+	builds: [
+		{ icon: '🔬', item: 'AI diagnostic engines integrated with Biomedilab' },
+		{ icon: '🧬', item: 'Medical imaging models trained on Mayapada Hospital data' },
+		{ icon: '🩺', item: 'Clinical decision support tools for hospital physicians' },
+		{ icon: '🌏', item: 'Exportable AI platform for other Indonesian hospital groups' }
+	]
+};
+
+export const roadmap: RoadmapPhase[] = [
+	{
+		phase: 1,
+		title: 'AI Triage + Telemedicine',
+		timeframe: '0 – 6 months',
+		sector: 'Healthcare',
+		sectorColor: '#10b981',
+		status: 'beachhead',
+		description:
+			'Deploy AI-powered symptom triage at Mayapada Clinic Pratama locations — enabling 24/7 assessment and intelligent specialist routing.',
+		milestones: ['AI triage MVP at 3 clinics', '10,000 patient sessions', 'Bahasa + English NLP model']
+	},
+	{
+		phase: 2,
+		title: 'Biomedilab AI Diagnostics',
+		timeframe: '3 – 9 months',
+		sector: 'Healthcare',
+		sectorColor: '#10b981',
+		status: 'beachhead',
+		description:
+			'Computer vision models analyzing X-rays, CT scans, and blood panels at Biomedilab — cutting report turnaround from 24h to under 2h.',
+		milestones: [
+			'Radiology AI at 2 lab sites',
+			'40% reduction in report time',
+			'Radiologist co-pilot tool live'
+		]
+	},
+	{
+		phase: 3,
+		title: 'Customer 360° Data Layer',
+		timeframe: '6 – 18 months',
+		sector: 'Cross-Sector',
+		sectorColor: '#d4af37',
+		status: 'expansion',
+		description:
+			'Unified data platform connecting patient, banking, hotel, and retail touchpoints — the intelligence backbone powering the entire group.',
+		milestones: [
+			'Data lake ingesting 4 sectors',
+			'Shared AI identity graph',
+			'Privacy-compliant consent layer'
+		]
+	},
+	{
+		phase: 4,
+		title: 'AI Credit for Health Financing',
+		timeframe: '9 – 18 months',
+		sector: 'Banking + Healthcare',
+		sectorColor: '#3b82f6',
+		status: 'expansion',
+		description:
+			'Bank Mayapada and Pohon Dana offer AI-underwritten healthcare financing products, powered by health and behavioral data.',
+		milestones: [
+			'Health installment product launch',
+			'ML credit scoring model live',
+			'Sompo insurance integration'
+		]
+	},
+	{
+		phase: 5,
+		title: 'Wellness Hospitality Packages',
+		timeframe: '12 – 24 months',
+		sector: 'Hospitality + Healthcare',
+		sectorColor: '#f43f5e',
+		status: 'scale',
+		description:
+			"IHG hotels bundled with Mayapada Hospital health screenings and Biomedilab diagnostics — Indonesia's first AI-powered medical tourism product.",
+		milestones: [
+			'3 hotel–hospital bundles live',
+			'Medical tourism platform',
+			'International guest health packages'
+		]
+	}
+];
+
+export const marketOpportunities: MarketOpportunity[] = [
+	{
+		sector: 'Digital Health',
+		tam: '$2.3B',
+		tamLabel: 'Indonesia Digital Health Market by 2027',
+		cagr: '29%',
+		color: '#10b981',
+		colorRgb: '16, 185, 129',
+		insight: 'Post-COVID: 73% of Indonesians are now comfortable with telehealth'
+	},
+	{
+		sector: 'AI Fintech',
+		tam: '$8.6B',
+		tamLabel: 'Indonesia Fintech Market by 2025',
+		cagr: '35%',
+		color: '#3b82f6',
+		colorRgb: '59, 130, 246',
+		insight: '51% of adults still unbanked — AI credit can unlock $300B in latent demand'
+	},
+	{
+		sector: 'PropTech AI',
+		tam: '$1.9B',
+		tamLabel: 'Southeast Asia PropTech by 2026',
+		cagr: '22%',
+		color: '#f59e0b',
+		colorRgb: '245, 158, 11',
+		insight: 'Smart building AI can cut energy costs 30% across the Mayapada Towers portfolio'
+	},
+	{
+		sector: 'AI Media',
+		tam: '$4.1B',
+		tamLabel: 'Indonesia Digital Advertising by 2026',
+		cagr: '18%',
+		color: '#06b6d4',
+		colorRgb: '6, 182, 212',
+		insight:
+			'Bloomberg partnership positions Mayapada as the premier AI-powered financial newsroom in Indonesia'
+	}
+];
+
+export const moatPillars: MoatPillar[] = [
+	{
+		title: 'Data Depth',
+		icon: '🧠',
+		description:
+			'40+ years of cross-sector customer relationships spanning banking, healthcare, property, travel, and media — generating continuous, structured, high-value data.',
+		proof: '5 listed companies on 2 exchanges. Every transaction is a training signal.'
+	},
+	{
+		title: 'Distribution at Scale',
+		icon: '🌐',
+		description:
+			'200+ bank branches, 7+ hospitals, 9 hotels, duty-free shops, and 3+ TV networks. AI output reaches customers exactly where they already are.',
+		proof: '25+ provinces. Zero new customer acquisition cost to deploy AI products.'
+	},
+	{
+		title: 'Institutional Trust',
+		icon: '🏛️',
+		description:
+			'Mayapada is a regulated, publicly-listed entity with decades of customer relationships. OJK, BPOM, and all operating licenses already secured.',
+		proof: '37 years of banking operations. Patients already consent. Regulators already know the name.'
+	},
+	{
+		title: 'Capital & Execution',
+		icon: '💎',
+		description:
+			"Founder net worth $5.1B. Tahir Foundation's $100M+ Bill & Melinda Gates partnership demonstrates the group's global execution standard.",
+		proof: '5 public entities provide direct access to capital markets for AI investment rounds.'
+	}
+];
+
+export const moatComparison = {
+	left: {
+		label: 'AI Startup',
+		items: [
+			{ have: true, text: 'Strong AI engineering team' },
+			{ have: true, text: 'Modern ML infrastructure' },
+			{ have: false, text: 'Real patient data at scale' },
+			{ have: false, text: 'Hospital network for deployment' },
+			{ have: false, text: 'Banking + insurance distribution' },
+			{ have: false, text: 'Regulatory licenses already held' },
+			{ have: false, text: '40 years of customer trust' },
+			{ have: false, text: 'Cross-sector data flywheel' }
+		]
+	},
+	right: {
+		label: 'Mayapada + AI MedTech',
+		items: [
+			{ have: true, text: 'S-Quantum Engine innovation model' },
+			{ have: true, text: 'NVIDIA + cloud AI infrastructure' },
+			{ have: true, text: 'Biomedilab + 7+ hospitals of real data' },
+			{ have: true, text: 'Own the hospitals deploying the AI' },
+			{ have: true, text: 'Bank Mayapada + Sompo integration' },
+			{ have: true, text: 'OJK, BPOM, IDX licensed and listed' },
+			{ have: true, text: 'Indonesia\'s most trusted conglomerate' },
+			{ have: true, text: '6 sectors feeding one AI brain' }
+		]
+	}
+};
+
+export const investmentTheses: InvestmentThesis[] = [
+	{
+		number: '01',
+		icon: '🔄',
+		title: 'The Flywheel Multiplier',
+		description:
+			'Each AI investment in one sector compounds returns in all others. Healthcare AI data improves banking risk models. Banking data funds hospitality personalization. The more sectors connected, the faster the entire system accelerates — creating exponential returns from linear investment.'
+	},
+	{
+		number: '02',
+		icon: '🏰',
+		title: 'The Unreplicable Moat',
+		description:
+			"No startup can acquire 37 years of institutional trust, 40+ operating companies, 5 stock listings, a presidential advisory track record, and real cross-sector patient and financial data. Mayapada's AI moat is the conglomerate itself — which is precisely why pure-play AI firms cannot compete here."
+	},
+	{
+		number: '03',
+		icon: '🌊',
+		title: "Indonesia's AI Inflection Point",
+		description:
+			'278 million people. A young, digital-native population. A government actively incentivizing AI adoption and healthcare digitization. Mayapada is already positioned at the intersection of every major demand curve — health, finance, property, travel, and media — at exactly the right moment.'
+	}
+];

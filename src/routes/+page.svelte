@@ -7,6 +7,12 @@
 	let heroVisible = $state(false);
 	let currentScene = $state(-1);
 	let scrollY = $state(0);
+	let isDark = $state(true);
+
+	function toggleTheme() {
+		isDark = !isDark;
+		document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+	}
 
 	// ─── Intersection Observer for scroll reveals ───
 	function observe(node: HTMLElement) {
@@ -99,6 +105,7 @@
 
 	// ─── Lifecycle ──────────────────────────────────
 	onMount(() => {
+		document.documentElement.setAttribute('data-theme', 'dark');
 		setTimeout(() => {
 			curtainOpen = true;
 		}, 800);
@@ -121,6 +128,20 @@
 
 <svelte:window bind:scrollY={scrollY} />
 
+<svelte:head>
+	{@html `<style>
+		:root[data-theme='light'] {
+			--bg-deep: #f4f1eb;
+			--bg-surface: #edeadf;
+			--bg-card: #ffffff;
+			--bg-card-hover: #faf8f2;
+			--text-primary: #160f03;
+			--text-secondary: rgba(22,15,3,0.65);
+			--text-muted: rgba(22,15,3,0.38);
+		}
+	</style>`}
+</svelte:head>
+
 <!-- ════════════════════════════════════════════════
      THEATRICAL CURTAIN
      ════════════════════════════════════════════════ -->
@@ -142,6 +163,27 @@
      SCENE NAVIGATION
      ════════════════════════════════════════════════ -->
 {#if curtainOpen}
+	<button
+		class="theme-toggle"
+		class:visible={heroVisible}
+		onclick={toggleTheme}
+		aria-label="Toggle theme"
+	>
+		{#if isDark}
+			<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+				<circle cx="12" cy="12" r="5"/>
+				<line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+				<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+				<line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+				<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+			</svg>
+		{:else}
+			<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+				<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+			</svg>
+		{/if}
+	</button>
+
 	<nav class="scene-nav" class:visible={heroVisible} aria-label="Scene Navigation">
 		<div class="scene-nav-track">
 			<div
@@ -309,7 +351,17 @@
 					</h3>
 					<div class="companies-list" use:staggerChildren>
 						{#each sector.companies as company}
-							<div class="company-card stagger-item">
+							<div
+								class="company-card stagger-item"
+								class:company-highlight={company.highlight}
+								style={company.highlight ? `--highlight-color: ${company.badgeColor ?? '#d4af37'}` : ''}
+							>
+								{#if company.badge}
+									<div class="company-badge" style="--badge-color: {company.badgeColor ?? '#d4af37'}">
+										<span class="company-badge-dot"></span>
+										{company.badge}
+									</div>
+								{/if}
 								<div class="company-header">
 									<h4 class="company-name">{company.name}</h4>
 									{#if company.ticker}
@@ -436,11 +488,22 @@
 				<span class="footer-logo">M</span>
 				<span>Mayapada AI Initiatives</span>
 			</div>
-			<p class="footer-note">
-				A conceptual exploration of AI-powered transformation.
-			</p>
-	</div>
-</footer>
+			<div class="footer-right">
+				<p class="footer-note">
+					A conceptual exploration of AI-powered transformation.
+				</p>
+				<a href="/investor" class="footer-investor-link">
+					View Investor Deck
+					<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M5 12h14M12 5l7 7-7 7"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+		<div class="footer-credit">
+			Edmund Situmorang · AI Innovator and Technology Builder
+		</div>
+	</footer>
 
 <style>
 	/* ════════════════════════════════════════════════
@@ -511,6 +574,41 @@
 	/* ════════════════════════════════════════════════
 	   SCENE NAVIGATION
 	   ════════════════════════════════════════════════ */
+	.theme-toggle {
+		position: fixed;
+		top: 1.25rem;
+		right: 1.25rem;
+		z-index: 200;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 38px;
+		height: 38px;
+		border-radius: 50%;
+		border: 1px solid rgba(212, 175, 55, 0.2);
+		background: rgba(6, 6, 14, 0.6);
+		backdrop-filter: blur(12px);
+		color: var(--text-secondary);
+		cursor: pointer;
+		opacity: 0;
+		transform: translateY(-8px);
+		transition: opacity 0.5s, transform 0.5s, border-color 0.2s, color 0.2s;
+	}
+
+	.theme-toggle.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.theme-toggle:hover {
+		border-color: var(--gold);
+		color: var(--gold);
+	}
+
+	:global([data-theme='light']) .theme-toggle {
+		background: rgba(244, 241, 235, 0.85);
+	}
+
 	.scene-nav {
 		position: fixed;
 		right: 1.5rem;
@@ -1195,6 +1293,55 @@
 		border: 1px solid rgba(212, 175, 55, 0.15);
 	}
 
+	/* ── Highlight card (e.g. Bloomberg) ── */
+	.company-card.company-highlight {
+		border-color: rgba(var(--highlight-color, 212 175 55), 0.35);
+		background: linear-gradient(
+			135deg,
+			rgba(var(--highlight-color, 212 175 55), 0.07) 0%,
+			var(--bg-card) 60%
+		);
+		box-shadow: 0 0 0 1px rgba(var(--highlight-color, 212 175 55), 0.12),
+					0 8px 32px rgba(0, 0, 0, 0.25);
+	}
+
+	.company-card.company-highlight:hover {
+		border-color: rgba(var(--highlight-color, 212 175 55), 0.55);
+		box-shadow: 0 0 0 1px rgba(var(--highlight-color, 212 175 55), 0.3),
+					0 12px 40px rgba(0, 0, 0, 0.3);
+	}
+
+	/* Badge pill */
+	.company-badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-family: var(--font-mono);
+		font-size: 0.6rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--badge-color, var(--gold));
+		background: rgba(245, 158, 11, 0.1);
+		border: 1px solid rgba(245, 158, 11, 0.28);
+		padding: 0.2rem 0.65rem;
+		border-radius: 20px;
+		margin-bottom: 0.75rem;
+	}
+
+	.company-badge-dot {
+		width: 5px;
+		height: 5px;
+		border-radius: 50%;
+		background: var(--badge-color, var(--gold));
+		animation: badgePulse 2s ease-in-out infinite;
+		flex-shrink: 0;
+	}
+
+	@keyframes badgePulse {
+		0%, 100% { opacity: 1; transform: scale(1); }
+		50% { opacity: 0.5; transform: scale(0.7); }
+	}
+
 	.company-desc {
 		font-size: 0.85rem;
 		color: var(--text-secondary);
@@ -1569,8 +1716,44 @@
 		}
 	}
 
+	.footer-right {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 0.5rem;
+	}
+
 	.footer-note {
 		font-size: 0.75rem;
+		color: var(--text-muted);
+	}
+
+	.footer-investor-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-size: 0.75rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		color: var(--gold);
+		text-decoration: none;
+		text-transform: uppercase;
+		transition: opacity 0.2s;
+	}
+
+	.footer-investor-link:hover {
+		opacity: 0.75;
+	}
+
+	.footer-credit {
+		max-width: 1200px;
+		margin: 1.25rem auto 0;
+		padding-top: 1.25rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.04);
+		text-align: center;
+		font-family: var(--font-mono);
+		font-size: 0.72rem;
+		letter-spacing: 0.12em;
 		color: var(--text-muted);
 	}
 
@@ -1747,6 +1930,10 @@
 		.footer-content {
 			flex-direction: column;
 			text-align: center;
+		}
+
+		.footer-right {
+			align-items: center;
 		}
 	}
 
