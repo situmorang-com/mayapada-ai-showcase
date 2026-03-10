@@ -44,13 +44,13 @@ export const sectors: Sector[] = [
 		color: '#3b82f6',
 		colorRgb: '59, 130, 246',
 		description:
-			'At the heart of Mayapada Group lies its banking powerhouse — Bank Mayapada Internasional, serving millions across 200+ branches in 25+ provinces. Complemented by fintech venture Pohon Dana and strategic insurance partnerships with Zurich and Sompo.',
+			'At the heart of Mayapada Group lies its banking powerhouse — Bank Mayapada Internasional, serving millions across 170+ branches across 19 provinces. Complemented by fintech venture Pohon Dana and strategic insurance partnerships with Zurich and Sompo.',
 		companies: [
 			{
 				name: 'Bank Mayapada Internasional',
 				ticker: 'IDX: MAYA',
 				description:
-					'Flagship private bank with 200+ branches across 25+ Indonesian provinces, primarily serving the SME market since 1989.'
+					'Flagship private bank with 170+ branches across 19 Indonesian provinces and 61 cities, primarily serving the SME market since 1989.'
 			},
 			{
 				name: 'PT Pohon Dana Indonesia',
@@ -74,7 +74,7 @@ export const sectors: Sector[] = [
 			{
 				title: 'Real-Time Fraud Detection',
 				description:
-					'Neural networks monitoring transactions in real-time, detecting anomalous patterns across Bank Mayapada\'s 200+ branch network before losses occur.',
+					'Neural networks monitoring transactions in real-time, detecting anomalous patterns across Bank Mayapada\'s 170+ branch network before losses occur.',
 				impact: 'High',
 				icon: '🛡️'
 			},
@@ -94,8 +94,8 @@ export const sectors: Sector[] = [
 			}
 		],
 		stats: [
-			{ value: 200, suffix: '+', label: 'Branches Nationwide' },
-			{ value: 25, suffix: '+', label: 'Provinces Covered' },
+			{ value: 170, suffix: '+', label: 'Branches Nationwide' },
+			{ value: 19, suffix: '', label: 'Provinces Covered' },
 			{ value: 37, suffix: 'yr', label: 'Years of Banking' }
 		]
 	},
@@ -379,7 +379,7 @@ export const sectors: Sector[] = [
 			{
 				name: 'Forbes Indonesia',
 				description:
-					'Local partner since 2000, chaired by Jonathan Tahir — the definitive voice of Indonesian business and wealth.'
+					'Local partner since 2010, chaired by Jonathan Tahir — the definitive voice of Indonesian business and wealth.'
 			},
 			{
 				name: 'Bloomberg Partnership',
@@ -443,7 +443,7 @@ export const sectors: Sector[] = [
 			}
 		],
 		stats: [
-			{ value: 26, suffix: 'yr', label: 'Forbes Indonesia' },
+			{ value: 16, suffix: 'yr', label: 'Forbes Indonesia' },
 			{ value: 3, suffix: '+', label: 'TV Networks' },
 			{ value: 2, suffix: '', label: 'Global Media Partners' }
 		]
@@ -453,7 +453,7 @@ export const sectors: Sector[] = [
 export const groupInfo = {
 	founder: 'Dato\' Sri Prof. Dr. Tahir',
 	founded: 1986,
-	netWorth: '$5.1B',
+	netWorth: '$11.9B',
 	headquarters: 'Jakarta, Indonesia',
 	publicEntities: 5,
 	totalCompanies: 40,
@@ -646,21 +646,21 @@ export const roadmap: RoadmapPhase[] = [
 export const marketOpportunities: MarketOpportunity[] = [
 	{
 		sector: 'Digital Health',
-		tam: '$2.3B',
-		tamLabel: 'Indonesia Digital Health Market by 2027',
-		cagr: '29%',
+		tam: '$2.7B',
+		tamLabel: 'Indonesia Digital Health Market by 2030',
+		cagr: '27%',
 		color: '#10b981',
 		colorRgb: '16, 185, 129',
-		insight: 'Post-COVID: 73% of Indonesians are now comfortable with telehealth'
+		insight: '98% of telemedicine users intend to continue post-COVID (Deloitte 2022)'
 	},
 	{
 		sector: 'AI Fintech',
-		tam: '$8.6B',
-		tamLabel: 'Indonesia Fintech Market by 2025',
-		cagr: '35%',
+		tam: '$11.1B',
+		tamLabel: 'Indonesia Fintech Market by 2033',
+		cagr: '15%',
 		color: '#3b82f6',
 		colorRgb: '59, 130, 246',
-		insight: '51% of adults still unbanked — AI credit can unlock $300B in latent demand'
+		insight: '48% of adults still unbanked (World Bank 2021) — AI credit can unlock $234B MSME financing gap (IFC)'
 	},
 	{
 		sector: 'PropTech AI',
@@ -673,9 +673,9 @@ export const marketOpportunities: MarketOpportunity[] = [
 	},
 	{
 		sector: 'AI Media',
-		tam: '$4.1B',
-		tamLabel: 'Indonesia Digital Advertising by 2026',
-		cagr: '18%',
+		tam: '$4.5B',
+		tamLabel: 'Indonesia Digital Advertising by 2031',
+		cagr: '6%',
 		color: '#06b6d4',
 		colorRgb: '6, 182, 212',
 		insight:
@@ -695,8 +695,8 @@ export const moatPillars: MoatPillar[] = [
 		title: 'Distribution at Scale',
 		icon: '🌐',
 		description:
-			'200+ bank branches, 7+ hospitals, 9 hotels, duty-free shops, and 3+ TV networks. AI output reaches customers exactly where they already are.',
-		proof: '25+ provinces. Zero new customer acquisition cost to deploy AI products.'
+			'170+ bank branches, 7+ hospitals, 9 hotels, duty-free shops, and 3+ TV networks. AI output reaches customers exactly where they already are.',
+		proof: '19 provinces, 61 cities. Zero new customer acquisition cost to deploy AI products.'
 	},
 	{
 		title: 'Institutional Trust',

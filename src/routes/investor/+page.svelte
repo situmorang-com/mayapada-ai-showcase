@@ -195,18 +195,18 @@
 			<em>AI-Native Conglomerate</em>
 		</h1>
 		<p class="cover-sub" use:observe>
-			A strategic brief on how Mayapada Group — 40+ companies, 6 sectors, $5.1B — becomes the
+			A strategic brief on how Mayapada Group — 40+ companies, 6 sectors, $11.9B — becomes the
 			most intelligent business ecosystem in Southeast Asia.
 		</p>
 
 		<div class="cover-metrics" use:stagger>
 			<div class="cover-metric stagger-item">
-				<span class="cover-metric-value">278M</span>
+				<span class="cover-metric-value">287M</span>
 				<span class="cover-metric-label">Addressable Population</span>
 			</div>
 			<div class="cover-metric-sep stagger-item"></div>
 			<div class="cover-metric stagger-item">
-				<span class="cover-metric-value">$5.1B</span>
+				<span class="cover-metric-value">$11.9B</span>
 				<span class="cover-metric-label">Group Net Worth</span>
 			</div>
 			<div class="cover-metric-sep stagger-item"></div>
@@ -243,17 +243,17 @@
 			<div class="problem-card stagger-item">
 				<div class="problem-stat"><span use:counter={51}>0</span>%</div>
 				<div class="problem-label">Adults Without Bank Access</div>
-				<p class="problem-insight">51% of Indonesian adults remain unbanked. AI-powered credit scoring using alternative data can unlock an estimated $300B in latent demand — immediately addressable through Bank Mayapada and Pohon Dana.</p>
+				<p class="problem-insight">48% of Indonesian adults remain unbanked (World Bank 2021). AI-powered credit scoring using alternative data can unlock an estimated $234B MSME financing gap (IFC) — immediately addressable through Bank Mayapada and Pohon Dana.</p>
 			</div>
 			<div class="problem-card stagger-item">
 				<div class="problem-stat">0.<span use:counter={4}>0</span></div>
 				<div class="problem-label">Doctors per 1,000 People</div>
-				<p class="problem-insight">Indonesia has 0.4 doctors per 1,000 people — 60% below the WHO minimum standard of 1:1,000. AI triage, diagnostics, and telemedicine is not a luxury. It is the only scalable solution.</p>
+				<p class="problem-insight">Indonesia has 0.47 doctors per 1,000 people — more than 50% below the WHO minimum standard of 1:1,000. AI triage, diagnostics, and telemedicine is not a luxury. It is the only scalable solution.</p>
 			</div>
 			<div class="problem-card stagger-item">
 				<div class="problem-stat"><span use:counter={67}>0</span>%</div>
 				<div class="problem-label">SMEs Without Formal Credit</div>
-				<p class="problem-insight">67% of Indonesian SMEs lack access to formal credit. AI-powered underwriting models that use business transaction history and behavioral signals can transform this into the largest untapped lending market in Asia.</p>
+				<p class="problem-insight">47% of Indonesian MSME financing demand remains unmet (IMF 2024). AI-powered underwriting models that use business transaction history and behavioral signals can transform this into the largest untapped lending market in Asia.</p>
 			</div>
 		</div>
 		<p class="opportunity-summary" use:observe>
@@ -308,7 +308,7 @@
 						<span class="reason-num">01</span>
 						<div>
 							<strong>Highest public demand</strong>
-							<p>Post-COVID, health awareness is a permanent behavioral shift. 73% of Indonesians are now comfortable with digital health services.</p>
+							<p>98% of telemedicine users intend to continue using digital health services post-COVID (Deloitte 2022).</p>
 						</div>
 					</li>
 					<li>
@@ -2286,10 +2286,16 @@
 
 	.footer-credit {
 		margin-top: 2rem;
+		padding: 0.6rem 0.9rem;
 		font-family: var(--font-mono);
 		font-size: 0.72rem;
 		letter-spacing: 0.12em;
 		color: var(--text-muted);
+		background: rgba(212, 175, 55, 0.06);
+		border-radius: 4px;
+		display: inline-block;
+		margin-left: 50%;
+		transform: translateX(-50%);
 	}
 
 	/* ═══════════════════════════════════════════════

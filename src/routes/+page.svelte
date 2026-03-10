@@ -1767,13 +1767,19 @@
 	.footer-credit {
 		max-width: 1200px;
 		margin: 1.25rem auto 0;
-		padding-top: 1.25rem;
+		padding: 0.6rem 0.9rem;
+		padding-top: calc(0.6rem + 1.25rem);
 		border-top: 1px solid rgba(255, 255, 255, 0.04);
 		text-align: center;
 		font-family: var(--font-mono);
 		font-size: 0.72rem;
 		letter-spacing: 0.12em;
 		color: var(--text-muted);
+		background: rgba(212, 175, 55, 0.06);
+		border-radius: 4px;
+		display: inline-block;
+		margin-left: 50%;
+		transform: translateX(-50%);
 	}
 
 	/* ════════════════════════════════════════════════
