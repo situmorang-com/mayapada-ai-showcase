@@ -709,7 +709,7 @@ export const moatPillars: MoatPillar[] = [
 		title: 'Capital & Execution',
 		icon: '💎',
 		description:
-			"Founder net worth $5.1B. Tahir Foundation's $100M+ Bill & Melinda Gates partnership demonstrates the group's global execution standard.",
+			"Founder net worth $11.9B (Forbes Oct 2025). Tahir Foundation's $100M+ Bill & Melinda Gates partnership demonstrates the group's global execution standard.",
 		proof: '5 public entities provide direct access to capital markets for AI investment rounds.'
 	}
 ];
